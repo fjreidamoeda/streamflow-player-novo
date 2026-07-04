@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0f0f23">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="#1a1a3e"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="StreamFlow"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Sair"
+            android:textSize="12sp"
+            android:backgroundTint="#333333"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="4dp">
+
+        <Button
+            android:id="@+id/btnLive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="CANAIS"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:backgroundTint="#e94560"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btnMovies"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="FILMES"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:backgroundTint="#333333"
+            android:textColor="#aaaaaa" />
+
+        <Button
+            android:id="@+id/btnSeries"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="SERIES"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:backgroundTint="#333333"
+            android:textColor="#aaaaaa" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Pesquisar..."
+        android:textColor="#ffffff"
+        android:textColorHint="#888888"
+        android:background="#1f1f40"
+        android:paddingHorizontal="12dp"
+        android:inputType="text"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategories"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#151530" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#2a2a5a" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#12122a"
+                android:clipToPadding="false"
+                android:padding="4dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
