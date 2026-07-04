@@ -38,10 +38,15 @@ jobs:
             -storepass streamflow123 -keypass streamflow123 \
             -dname "CN=StreamFlow, OU=Dev, O=StreamFlow, L=SP, ST=SP, C=BR"
 
+      - name: Download Gradle
+        run: |
+          curl -sL https://services.gradle.org/distributions/gradle-8.2-bin.zip -o /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /opt
+          echo "/opt/gradle-8.2/bin" >> $GITHUB_PATH
+
       - name: Build APK
         run: |
-          chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log
+          gradle assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log
           exit ${PIPESTATUS[0]}
 
       - name: Upload APK
